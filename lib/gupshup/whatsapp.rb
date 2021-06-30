@@ -1,23 +1,18 @@
 class Gupshup::WhatspApp
 
-    def self.send(apikey,from,to,body)
-        puts "sending"
-
-        # return Shoutout::RestClient.postJson(
-        #     body:{
-        #         'source' => from, 
-        #         'transports':['sms'],
-        #         'content' => {
-        #         'sms'=>body
-        #     }, 
-        #     'destinations' => [to]},
-        #     url:"https://api.getshoutout.com/coreservice/messages",
-        #     apikey:apikey
-
-        # )
-
-
+    def self.send(apikey,from,to,body,appName)
         
+        return Gupshup::RestClient.post(
+            body:{
+                'source' => from, 
+                'channel':'whatsapp',
+                'message' => body, 
+                'destination' => to,
+                'src.name'=>appName
+            },
+            url:"https://api.gupshup.io/sm/api/v1/msg",
+            apikey:apikey
+        )
     end
 end
 

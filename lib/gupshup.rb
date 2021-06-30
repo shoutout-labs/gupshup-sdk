@@ -2,27 +2,28 @@
 module Gupshup
   class Client
     # Init 
-    # shoutout=Shoutout::Client.new("APIKEY HERE")
+    # @gupshup = Gupshup::Client.new("APIKEY HERE")
     #
     # 
     # Example:
-    #   >> response=shoutout.sendSms(from:"ShoutTEST",to:"94778811111",body:"This is a test message")
-    #   {"status"=>"1001", "description"=>"submit success", "cost"=>1, "responses"=>[{"destination"=>"94778811111", "reference_id"=>"ca31e340-c8f2-11eb-94b7-45623297139f", "status"=>"1001", "cost"=>1}]}
+    #   >> response=@gupshup.sendWhatsApp(from:"917834811114",to:"94778845700",body:"This is to remind you that {{1}} is due by {{2}}.",appName:"Shoutouttest")
+    #   {:code=>200, :body=>{"status"=>"submitted", "messageId"=>"45c63e36-2e30-4116-aa85-66a3de6f35fa"}}
     #
     # Arguments:
     #   apikey: (String) ShoutOUT Apikey
     #   from: (String) sender ID
     #   to: (Array) receivers phone numbers
     #   body: (String) message body
+    #   appName: (String) Gupshup app name
     attr_reader :apikey
     def initialize(apikey)
       @apikey=apikey
     end
 
     
-    def sendSms(from:,to:,body:)
+    def sendWhatsApp(from:,to:,body:,appName:)
       
-        return WhatspApp.send(self.apikey,from,to,body)
+        return WhatspApp.send(self.apikey,from,to,body,appName)
     end
   end
 end

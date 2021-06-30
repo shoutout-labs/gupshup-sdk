@@ -3,12 +3,12 @@ require 'gupshup'
 
 class GupshupSdkTest < Minitest::Test
     def setup
-        @gupshup = Gupshup::Client.new("APIKEY HERE")
+        @gupshup = Gupshup::Client.new("ma7iaeu7htm6mezzfsbxezmjrwkqof7q")
     end
-    def test_send_sms
-        response=@gupshup.sendSms(from:"ShoutTEST",to:"94778845713",body:"This is a test message")
+    def test_send_whatsApp
+        response=@gupshup.sendWhatsApp(from:"917834811114",to:"94778845713",body:"This is to remind you that {{1}} is due by {{2}}.",appName:"Shoutouttest")
         puts response
-        assert_equal "1001",
-          response["status"]
+        assert_equal 200,
+          response[:code]
     end
 end
