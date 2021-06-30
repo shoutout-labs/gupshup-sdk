@@ -9,6 +9,6 @@ Gem::Specification.new do |s|
     s.homepage    =
       'https://rubygems.org/gems/hola'
     s.license       = 'MIT'
-    s.add_runtime_dependency "http",
-    ["~> 5.0"]
+    # s.add_runtime_dependency "http",
+    # ["~> 5.0"]
   end
