@@ -19,7 +19,7 @@ def self.post(apikey:,body:,url:)
         response = http.request(request)
         case response
             when Net::HTTPSuccess then
-                return {code:200,response:response.read_body}
+                return {code:200,response:JSON.parse(response.read_body)}
             else
                 return {code:response.value,response:response.read_body}
         end

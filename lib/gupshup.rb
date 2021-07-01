@@ -21,14 +21,17 @@ module Gupshup
       @appName=appName
     end
 
-    
+    def sendWhatsApp(from:,to:,body:)
+      return WhatspApp.send(self.apikey,from,to,JSON.generate(body),self.appName)
+    end
+
     def sendWhatsAppText(from:,to:,body:)
       params={
         "isHSM":"true",
         "type": "text",
         "text": body
       }
-        return WhatspApp.send(self.apikey,from,to,JSON.generate(params),self.appName)
+        return sendWhatsApp(from:from,to:to,body:params)
     end
 
     def sendWhatsAppImage(from:,to:,imageUrl:,previewUrl: nil,caption: nil, filename: nil)
@@ -39,7 +42,7 @@ module Gupshup
       params[:previewUrl]=previewUrl|| imageUrl
       params[:caption]=caption if caption!=nil
       params[:filename]=filename if filename!=nil
-      return WhatspApp.send(self.apikey,from,to,JSON.generate(params),self.appName)
+      return sendWhatsApp(from:from,to:to,body:params)
     end
   end
 end
