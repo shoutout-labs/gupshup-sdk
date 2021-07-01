@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
     s.name        = 'gupshup-sdk'
-    s.version     = '1.0.1'
+    s.version     = '1.0.2'
     s.summary     = "Gupshup SDK"
     s.description = "Gupshup API integration"
     s.authors     = ["ShoutOUT Labs"]
@@ -9,6 +9,6 @@ Gem::Specification.new do |s|
     s.homepage    =
       'https://rubygems.org/gems/hola'
     s.license       = 'MIT'
-    s.add_runtime_dependency "http",
-    ["~> 5.0"]
+    # s.add_runtime_dependency "http",
+    # ["~> 5.0"]
   end
