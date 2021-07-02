@@ -1,10 +1,10 @@
 require 'minitest/autorun'
-require 'gupshup_sdk'
+require 'gupshup_lib'
 
-class GupshupSdkTest < Minitest::Test
+class GupshupLibTest < Minitest::Test
     
     def setup
-        @gupshup = GupshupSdk::Client.new("ma7iaeu7htm6mezzfsbxezmjrwkqof7q","Shoutouttest")
+        @gupshup = GupshupLib::Client.new("ma7iaeu7htm6mezzfsbxezmjrwkqof7q","Shoutouttest")
         @outgoing_number="94766171818"
         @source_number="917834811114"
     end

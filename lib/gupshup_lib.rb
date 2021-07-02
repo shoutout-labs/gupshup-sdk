@@ -1,8 +1,8 @@
 
-module GupshupSdk
+module GupshupLib
   class Client
     # Init 
-    # @gupshup = GupshupSdk::Client.new("APIKEY HERE","APPNAME")
+    # @gupshup = GupshupLib::Client.new("APIKEY HERE","APPNAME")
     #
     # 
     # Example:
@@ -46,5 +46,5 @@ module GupshupSdk
     end
   end
 end
-require 'gupshup_sdk/whatsapp'
+require 'gupshup_lib/whatsapp'
 require 'uri'
