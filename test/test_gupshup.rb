@@ -4,8 +4,8 @@ require 'gupshup_lib'
 class GupshupLibTest < Minitest::Test
     
     def setup
-        @gupshup = GupshupLib::Client.new("ma7iaeu7htm6mezzfsbxezmjrwkqof7q","Shoutouttest")
-        @outgoing_number="94766171818"
+        @gupshup = GupshupLib::Client.new("APIKEY","APPNAME")
+        @outgoing_number="94766171811"
         @source_number="917834811114"
     end
     def test_send_whatsAppText
