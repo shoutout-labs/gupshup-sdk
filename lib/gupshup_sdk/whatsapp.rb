@@ -1,8 +1,8 @@
-class Gupshup::WhatspApp
+class GupshupSdk::WhatspApp
 
     def self.send(apikey,from,to,body,appName)
         
-        return Gupshup::RestClient.post(
+        return GupshupSdk::RestClient.post(
             body:{
                 "source" => from, 
                 "channel"=> "whatsapp",
@@ -17,4 +17,4 @@ class Gupshup::WhatspApp
 end
 
 
-require 'gupshup-sdk/restclient'
+require 'gupshup_sdk/restclient'

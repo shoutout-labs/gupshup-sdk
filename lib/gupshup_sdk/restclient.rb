@@ -1,4 +1,4 @@
-class Gupshup::RestClient
+class GupshupSdk::RestClient
 
 def self.post(apikey:,body:,url:)
       
