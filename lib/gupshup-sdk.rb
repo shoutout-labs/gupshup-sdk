@@ -46,5 +46,5 @@ module Gupshup
     end
   end
 end
-require 'gupshup/whatsapp'
+require 'gupshup-sdk/whatsapp'
 require 'uri'

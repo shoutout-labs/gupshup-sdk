@@ -17,4 +17,4 @@ class Gupshup::WhatspApp
 end
 
 
-require 'gupshup/restclient'
+require 'gupshup-sdk/restclient'
