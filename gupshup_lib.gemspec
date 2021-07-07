@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
     s.name        = 'gupshup_lib'
-    s.version     = '1.0.6'
+    s.version     = '1.0.7'
     s.summary     = "Gupshup SDK"
     s.description = "Gupshup API integration"
     s.authors     = ["ShoutOUT Labs"]

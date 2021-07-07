@@ -44,6 +44,16 @@ module GupshupLib
       params[:filename]=filename if filename!=nil
       return sendWhatsApp(from:from,to:to,body:params)
     end
+
+    def sendWhatsAppFile(from:, to:, fileUrl:, caption: nil, filename: nil)
+      params={
+        "type": "file",
+        "url": fileUrl
+      }
+      params[:caption]=caption if caption!=nil
+      params[:filename]=filename if filename!=nil
+      return sendWhatsApp(from:from,to:to,body:params)
+    end
   end
 end
 require 'gupshup_lib/whatsapp'

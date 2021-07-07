@@ -26,6 +26,7 @@ def self.post(apikey:,body:,url:)
 
 
         rescue StandardError
+            puts response
             return {code:response.code, response:response.read_body}      
 
     end
