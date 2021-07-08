@@ -1,8 +1,8 @@
 
-module Gupshup
+module GupshupLib
   class Client
     # Init 
-    # @gupshup = Gupshup::Client.new("APIKEY HERE","APPNAME")
+    # @gupshup = GupshupLib::Client.new("APIKEY HERE","APPNAME")
     #
     # 
     # Example:
@@ -44,7 +44,17 @@ module Gupshup
       params[:filename]=filename if filename!=nil
       return sendWhatsApp(from:from,to:to,body:params)
     end
+
+    def sendWhatsAppFile(from:, to:, fileUrl:, caption: nil, filename: nil)
+      params={
+        "type": "file",
+        "url": fileUrl
+      }
+      params[:caption]=caption if caption!=nil
+      params[:filename]=filename if filename!=nil
+      return sendWhatsApp(from:from,to:to,body:params)
+    end
   end
 end
-require 'gupshup/whatsapp'
+require 'gupshup_lib/whatsapp'
 require 'uri'

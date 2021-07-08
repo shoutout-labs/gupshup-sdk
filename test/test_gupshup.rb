@@ -1,11 +1,11 @@
 require 'minitest/autorun'
-require 'gupshup'
+require 'gupshup_lib'
 
-class GupshupSdkTest < Minitest::Test
+class GupshupLibTest < Minitest::Test
     
     def setup
-        @gupshup = Gupshup::Client.new("ma7iaeu7htm6mezzfsbxezmjrwkqof7q","Shoutouttest")
-        @outgoing_number="94766171811"
+        @gupshup = GupshupLib::Client.new("API KEY","APP NAME")
+        @outgoing_number=""
         @source_number="917834811114"
     end
     def test_send_whatsAppText
@@ -20,6 +20,18 @@ class GupshupSdkTest < Minitest::Test
     #     imageUrl:"https://www.buildquickbots.com/whatsapp/media/sample/jpg/sample01.jpg",
     #     caption:"Test Image",
     #     # filename:"Sample.jpeg"
+    #     )
+    #     puts response
+    #     assert_equal 200,
+    #       response[:code]
+        
+    # end
+
+    # def test_send_whatsAppFile
+    #     response=@gupshup.sendWhatsAppFile(from:@source_number,to:@outgoing_number,
+    #     fileUrl:"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    #     caption:"Test File",
+    #     filename:"Sample.pdf"
     #     )
     #     puts response
     #     assert_equal 200,
